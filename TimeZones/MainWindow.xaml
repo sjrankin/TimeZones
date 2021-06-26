@@ -1,0 +1,207 @@
+﻿<Window x:Class="TimeZones.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TimeZones"
+        mc:Ignorable="d"
+        Title="Time Zones" 
+        Icon="/MainIcon.png"
+        Height="250" 
+        Width="350">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Exit" 
+                          Click="HandleClose"/>
+            </MenuItem>
+            <MenuItem Header="_Time Zones">
+                <MenuItem Header="_Edit Time Zones"/>
+            </MenuItem>
+        </Menu>
+        <ScrollViewer>
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="270*"/>
+                    <ColumnDefinition Width="150*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                CornerRadius="4"
+                BorderBrush="Black"
+                BorderThickness="2"
+                x:Name="Row1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="65*"/>
+                            <ColumnDefinition Width="35*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="TZ1Name"
+               Grid.Column="0" 
+               FontWeight="Bold" 
+                       VerticalAlignment="Center" 
+                       ClipToBounds="True" 
+                       FontSize="14">
+                            PDT
+                        </Label>
+                        <Grid Grid.Row="0"
+                  Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="55*"/>
+                                <RowDefinition Height="45*"/>
+                            </Grid.RowDefinitions>
+                            <Label x:Name="TZ1" 
+               Grid.Row="0"
+               FontWeight="Bold" 
+               FontFamily="Consolas" 
+               FontSize="20" Height="30">
+                                0:00
+                            </Label>
+                            <Label x:Name="TZ1Date"
+                   Grid.Row="1"
+                   FontWeight="Light"
+                   FontFamily="Consolas"
+                   FontSize="12" VerticalAlignment="Center">
+                                24 June 2021
+                            </Label>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                CornerRadius="4"
+                BorderBrush="Black"
+                BorderThickness="2"
+                x:Name="Row2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="65*"/>
+                            <ColumnDefinition Width="35*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="1"
+               Grid.Column="0" 
+               FontWeight="Bold"
+               x:Name="TZ2Name" VerticalAlignment="Center" FontSize="14" Grid.ColumnSpan="2">
+                            UTC
+                        </Label>
+                        <Grid
+                  Grid.Column="2"  Grid.RowSpan="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="55*"/>
+                                <RowDefinition Height="45*"/>
+                            </Grid.RowDefinitions>
+                            <Label x:Name="TZ2" 
+               Grid.Row="0"
+               FontWeight="Bold" 
+               FontFamily="Consolas" 
+               FontSize="20" Height="30">
+                                0:00
+                            </Label>
+                            <Label x:Name="TZ2Date"
+                   Grid.Row="1"
+                   FontWeight="Light"
+                   FontFamily="Consolas"
+                   FontSize="12" VerticalAlignment="Center">
+                                24 June 2021
+                            </Label>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                CornerRadius="4"
+                BorderBrush="Black"
+                BorderThickness="2"
+                x:Name="Row3">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="65*"/>
+                            <ColumnDefinition Width="35*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="2"
+               Grid.Column="0" 
+               FontWeight="Bold"
+               x:Name="TZ3Name" VerticalAlignment="Center" FontSize="14" Grid.ColumnSpan="2">
+                            JST
+                        </Label>
+                        <Grid Grid.Row="1"
+                  Grid.Column="2" Grid.RowSpan="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="55*"/>
+                                <RowDefinition Height="45*"/>
+                            </Grid.RowDefinitions>
+                            <Label x:Name="TZ3" 
+               Grid.Row="0"
+               FontWeight="Bold" 
+               FontFamily="Consolas" 
+               FontSize="20" Height="30">
+                                0:00
+                            </Label>
+                            <Label x:Name="TZ3Date"
+                   Grid.Row="1"
+                   FontWeight="Light"
+                   FontFamily="Consolas"
+                   FontSize="12" VerticalAlignment="Center">
+                                24 June 2021
+                            </Label>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                CornerRadius="4"
+                BorderBrush="Black"
+                BorderThickness="2"
+                x:Name="Row4">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="65*"/>
+                            <ColumnDefinition Width="35*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="3"
+               Grid.Column="0" 
+               FontWeight="Bold"
+               x:Name="TZ4Name" VerticalAlignment="Center" FontSize="14" Grid.ColumnSpan="2">
+                            CEDT
+                        </Label>
+                        <Grid Grid.Row="2"
+                  Grid.Column="2" Grid.RowSpan="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="55*"/>
+                                <RowDefinition Height="45*"/>
+                            </Grid.RowDefinitions>
+                            <Label x:Name="TZ4" 
+               Grid.Row="0"
+               FontWeight="Bold" 
+               FontFamily="Consolas" 
+               FontSize="20" Height="30">
+                                0:00
+                            </Label>
+                            <Label x:Name="TZ4Date"
+                   Grid.Row="1"
+                   FontWeight="Light"
+                   FontFamily="Consolas"
+                   FontSize="12" VerticalAlignment="Center">
+                                24 June 2021
+                            </Label>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+        </ScrollViewer>
+    </DockPanel>
+</Window>
