@@ -29,6 +29,7 @@ namespace TimeZones
         public MainWindow()
         {
             InitializeComponent();
+            UserData.InitializeDatabase();
 
             System.Collections.ObjectModel.ReadOnlyCollection<TimeZoneInfo> list = TimeZoneInfo.GetSystemTimeZones();
             for (int i = 0; i < list.Count; i++)
@@ -55,14 +56,22 @@ namespace TimeZones
 
         private void ClockTick(object Sender, EventArgs e)
         {
-            SolidColorBrush DayText = new SolidColorBrush();
-            DayText.Color = Colors.Black;
-            SolidColorBrush NightText = new SolidColorBrush();
-            NightText.Color = Colors.White;
-            SolidColorBrush DayTime = new SolidColorBrush();
-            DayTime.Color = Colors.Yellow;
-            SolidColorBrush NightTime = new SolidColorBrush();
-            NightTime.Color = System.Windows.Media.Color.FromRgb(5, 5, 100);
+            SolidColorBrush DayText = new()
+            {
+                Color = Colors.Black
+            };
+            SolidColorBrush NightText = new()
+            {
+                Color = Colors.White
+            };
+            SolidColorBrush DayTime = new()
+            {
+                Color = Colors.Yellow
+            };
+            SolidColorBrush NightTime = new()
+            {
+                Color = System.Windows.Media.Color.FromRgb(5, 5, 100)
+            };
 
             DateTime UTC = DateTime.UtcNow;
             System.TimeZoneInfo UTCTZInfo = TimeZoneInfo.FindSystemTimeZoneById("UTC");
